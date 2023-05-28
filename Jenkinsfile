@@ -54,8 +54,7 @@ pipeline {
               }      
            }       
     }
-    
-    
+        
     stage ('DAST') {
       steps {
         sshagent(['zap']) {
