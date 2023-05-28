@@ -1,21 +1,21 @@
 pipeline {
-    agent any
-		tools
-       {
-			maven "Maven"
-       }
+  agent any
+   tools
+     {
+      maven "Maven"
+     }
 	   
     stages {
-		stage('checkout') {
-           stage('SCM Checkout'){
-                git url: 'https://github.com/tusharjadhav29/webapp.git',branch: 'master'
+	stage('SCM Checkout'){
+	   steps {
+		git url: 'https://github.com/tusharjadhav29/webapp.git',branch: 'master'
             }
         }
-		stage('Build') {
-			steps {
+	stage('Build') {
+	    steps {
                 sh 'mvn clean package'             
 			}
         }
-        
+       
 }
 }
